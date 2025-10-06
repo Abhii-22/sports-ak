@@ -1,0 +1,98 @@
+.upload-event-form-container {
+  background-color: #2c2c2c; /* Dark background for the card */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px; /* Constrain width */
+  box-sizing: border-box;
+  color: #fff; /* White text */
+}
+
+.upload-event-form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #ffeb3b; /* Highlight yellow */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ffeb3b; /* Highlight on focus */
+}
+
+.upload-event-form-container button {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  background-color: #ffeb3b; /* Yellow button */
+  color: #000; /* Black text */
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.upload-event-form-container button:hover {
+  background-color: #ffd700; /* Darker yellow on hover */
+}
+
+.prizes-section {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #555;
+}
+
+.prizes-section h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffeb3b;
+  font-size: 1.2em;
+}
+
+.prize-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.prize-input label {
+  flex-basis: 50px; /* Fixed width for labels */
+  font-weight: bold;
+  color: #f0f0f0;
+  text-align: center;
+  background-color: #444;
+  padding: 12px 0;
+  border-radius: 8px 0 0 8px;
+  border: 1px solid #555;
+  border-right: none;
+}
+
+.prize-input input {
+  flex-grow: 1;
+  border-radius: 0 8px 8px 0;
+}
