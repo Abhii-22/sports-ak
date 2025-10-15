@@ -160,3 +160,9 @@ nav a:hover {
 .btn-signout:hover {
   background-color: #e60000;
 }
+
+@media (max-width: 768px) {
+  header {
+    display: none;
+  }
+}

@@ -18,27 +18,12 @@ const prizeIconMap = {
 };
 
 const Events = ({ events = [] }) => {
-  const [selectedFiles, setSelectedFiles] = useState([]);
-  const [previews, setPreviews] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPoster, setSelectedPoster] = useState(null);
   const navigate = useNavigate();
 
 
-  const handleFileChange = (event) => {
-    const files = Array.from(event.target.files);
-    setSelectedFiles(files);
-
-    const newPreviews = files.map(file => URL.createObjectURL(file));
-    setPreviews(newPreviews);
-  };
-
-  const handleUpload = (event) => {
-    event.preventDefault();
-    console.log('Uploading:', selectedFiles);
-    alert(`${selectedFiles.length} file(s) selected for upload.`);
-  };
-
+  
   const openModal = (poster) => {
     setSelectedPoster(poster);
     setIsModalOpen(true);
@@ -52,9 +37,6 @@ const Events = ({ events = [] }) => {
   return (
     <>
       <div className="events-page">
-        <button className="back-button" onClick={() => navigate(-1)}>
-          <FaArrowLeft /> Back
-        </button>
       <div className="upcoming-events">
         <h1>Upcoming Sports Events</h1>
         <div className="event-list">
@@ -89,31 +71,7 @@ const Events = ({ events = [] }) => {
         </div>
       </div>
 
-      <div className="winners-section">
-        <h1>Sports Champions</h1>
-        {events.map(event => (
-          <div key={event.id} className="winner-card">
-            <h2><FaTrophy className="event-icon" /> {event.title} - Winners</h2>
-            <p>Date: {event.date}</p>
-            <p>Place: {event.place}</p>
-            <form className="upload-form" onSubmit={handleUpload}>
-              <input type="file" multiple onChange={handleFileChange} />
-              <button type="submit">Upload Winner Media</button>
-            </form>
-            <div className="previews">
-              {previews.map((preview, index) => (
-                <img
-                  src={preview}
-                  key={index}
-                  alt={`Preview ${index + 1}`}
-                  className="preview-image"
-                />
-              ))}
-            </div>
           </div>
-        ))}
-      </div>
-    </div>
       <Modal show={isModalOpen} onClose={closeModal}>
         {selectedPoster && <img src={selectedPoster} alt="Enlarged event poster" />}
       </Modal>

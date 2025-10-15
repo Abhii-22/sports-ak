@@ -1,0 +1,52 @@
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1935&auto=format&fit=crop') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+}
+
+.landing-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.landing-header p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.landing-cta .cta-button {
+  margin: 0 10px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cta-button.primary {
+  background-color: #61dafb;
+  color: #000;
+}
+
+.cta-button.primary:hover {
+  background-color: #fff;
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.cta-button.secondary:hover {
+  background-color: #fff;
+  color: #000;
+}

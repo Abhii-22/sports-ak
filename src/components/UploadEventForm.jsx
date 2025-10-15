@@ -1,7 +1,9 @@
 import React from 'react';
+import { useAuth } from '../context/AuthContext'; // Import useAuth
 import './UploadEventForm.css';
 
 const UploadEventForm = ({ addEvent }) => {
+  const { currentUser } = useAuth(); // Get the current user
   return (
     <div className="upload-event-form-container">
       <h2>Upload Event</h2>
@@ -24,6 +26,7 @@ const UploadEventForm = ({ addEvent }) => {
           },
           poster: URL.createObjectURL(formData.get('eventImage')),
           icon: 'FaFutbol', // Default icon, can be changed later
+          uploadedBy: currentUser ? currentUser.email : 'anonymous',
         };
         addEvent(newEvent);
       }}>

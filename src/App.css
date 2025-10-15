@@ -22,6 +22,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-top: 100px; /* Adjust based on header height */
+  padding-bottom: 80px; /* Add padding to prevent content from hiding behind the bottom nav */
 }
 
 .App-link {
@@ -35,4 +37,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+main {
+  padding-bottom: 80px; /* Add padding to prevent content from hiding behind the bottom nav */
 }

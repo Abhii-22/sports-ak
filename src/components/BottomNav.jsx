@@ -1,26 +1,41 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './BottomNav.css';
-import { FaHome, FaSearch, FaPlusSquare, FaYoutube, FaUser } from 'react-icons/fa';
+import { FaHome, FaSearch, FaFutbol, FaPlusSquare, FaYoutube, FaUser } from 'react-icons/fa';
+import { useAuth } from '../context/AuthContext';
 
 const BottomNav = () => {
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
+
+  const handleUploadClick = (e) => {
+    if (!currentUser) {
+      e.preventDefault();
+      navigate('/signin');
+    }
+  };
+
   return (
-    <div className="bottom-nav">
-      <div className="nav-item">
+    <nav className="bottom-nav">
+      <Link to="/home" className="nav-item">
         <FaHome />
-      </div>
-      <div className="nav-item">
+      </Link>
+      <Link to="/search" className="nav-item">
         <FaSearch />
-      </div>
-      <div className="nav-item">
+      </Link>
+      <Link to="/events" className="nav-item">
+        <FaFutbol />
+      </Link>
+      <Link to="/upload" className="nav-item" onClick={handleUploadClick}>
         <FaPlusSquare />
-      </div>
-      <div className="nav-item">
+      </Link>
+      <Link to="/reels" className="nav-item">
         <FaYoutube />
-      </div>
-      <div className="nav-item">
+      </Link>
+      <Link to="/profile" className="nav-item">
         <FaUser />
-      </div>
-    </div>
+      </Link>
+    </nav>
   );
 };
 

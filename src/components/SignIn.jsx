@@ -13,7 +13,7 @@ const SignIn = () => {
     e.preventDefault();
     // In a real app, you'd validate the password against a backend.
     signIn(email);
-    navigate('/');
+    navigate('/home');
   };
 
   return (
